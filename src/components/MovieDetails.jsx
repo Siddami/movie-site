@@ -10,9 +10,10 @@ const MovieDetails = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch(
-          `https://api.themoviedb.org/3/movie/${movieId}?api_key=e9daea829c0d4fd5b5b075e851fe82a6`
-        )
+        const res =
+          await fetch(
+            `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}`
+          );
         const data = await res.json();
         setMovie(data);
 
